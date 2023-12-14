@@ -1,11 +1,13 @@
-#ifndef FUNC_H
-#define FUNC_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <sys/time.h>
+#include <math.h>
 
-#define MAX_BUFFER 1024
+#define TAM_BUFFER 65536
 
-void mensagemErro(char *mensagem);
-int conectarAoServidor(char *server_host, int porta_servidor);
-void receberArquivo(int sockfd, char *arquivo, int tam_buffer);
-void calcularEImprimirResultado(int tam_buffer, int bytes_recebidos, struct timeval inicio, struct timeval fim);
-
-#endif
+void envia_msg(const char *msg);
