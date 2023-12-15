@@ -65,10 +65,7 @@ int main(int argc, char *argv[]) {
 
     gettimeofday(&final_tempo, NULL);
 
-    double tempo_passado = (final_tempo.tv_sec - inicio_tempo.tv_sec) + (final_tempo.tv_usec - inicio_tempo.tv_usec) / 1e6;
-    
-    printf("Tamanho do buffer eh %5d byte(s), número total de bytes enviados: %d.\n", tam_buffer, bytes_enviados);
-    printf("Tempo decorrido na execução: %.6f segundos.\n", tempo_passado);
+    calcular_e_imprimir_tempos(&inicio_tempo, &final_tempo, bytes_enviados, tam_buffer);
 
     return 0;
 }

@@ -51,12 +51,7 @@ int main(int argc, char *argv[]) {
 
     gettimeofday(&final_tempo, NULL);
 
-    double tempo_passado = (final_tempo.tv_sec - inicio_tempo.tv_sec) + (final_tempo.tv_usec - inicio_tempo.tv_usec) / 1e6;
-    double taxa_transferencia = total_bytes_recebidos / (tempo_passado * 1000);
-
-    printf("Buffer: %5d byte(s); total de bytes recebidos: %d.\n", tam_buffer, total_bytes_recebidos);
-    printf("Tempo total de execução: %.6f segundos.\n", tempo_passado);
-    printf("Taxa de Transferência: %10.2f kbps.\n", taxa_transferencia);
+    calcular_e_imprimir_tempos(&inicio_tempo, &final_tempo, total_bytes_recebidos, tam_buffer);
 
     return 0;
 }
