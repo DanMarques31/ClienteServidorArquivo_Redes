@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h> // Entrada e saida padrão do C
+#include <stdlib.h> // Alocação e controle de processos
+#include <string.h> // Manipulação de string
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
